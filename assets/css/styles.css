@@ -1,0 +1,22 @@
+/* Estilos personalizados adicionales */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animaciones suaves */
+.hover\:shadow-lg {
+    transition: all 0.3s ease;
+}
+
+/* Mejoras de accesibilidad */
+:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+}

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyFacturas - Automatiza la gestión de tus facturas</title>
+    <meta name="description" content="EasyFacturas: Automatiza la gestión de tus facturas directamente desde tu correo. Organiza, procesa y analiza tus facturas de forma automática.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold text-blue-600">EasyFacturas</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#como-funciona" class="text-gray-700 hover:text-blue-600">¿Cómo Funciona?</a>
+                    <a href="#beneficios" class="text-gray-700 hover:text-blue-600">Beneficios</a>
+                    <a href="#planes" class="text-gray-700 hover:text-blue-600">Planes</a>
+                    <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">Empezar Gratis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-r from-blue-600 to-blue-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Automatiza la gestión de tus facturas
+                </h1>
+                <p class="text-xl text-blue-100 mb-8">
+                    Olvídate de descargar y organizar manualmente tus facturas.<br>
+                    Nosotros lo hacemos por ti, directamente desde tu correo.
+                </p>
+                <a href="#" class="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50">
+                    Prueba Gratis
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ¿Qué es EasyFacturas? -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">¿Qué es EasyFacturas?</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg text-gray-700 mb-6">
+                        EasyFacturas es una herramienta innovadora que automatiza la gestión de facturas electrónicas directamente desde tu correo. Sin necesidad de descargar ni instalar programas, solo debes conceder permisos para que la plataforma acceda a tu bandeja de entrada y procese automáticamente los documentos.
+                    </p>
+                    <p class="text-lg text-gray-700">
+                        Los archivos se almacenan en un folder seguro dentro del espacio de trabajo asociado a tu correo, ya sea en Google Drive, OneDrive o iCloud Drive, garantizando acceso desde cualquier lugar.
+                    </p>
+                </div>
+                <div class="bg-gray-100 p-8 rounded-xl">
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="ml-3 text-gray-700">Procesamiento automático de facturas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="ml-3 text-gray-700">Almacenamiento seguro en la nube</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="ml-3 text-gray-700">Organización automática en hojas de cálculo</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo Funciona -->
+    <section id="como-funciona" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">¿Cómo funciona?</h2>
+            
+            <div class="grid md:grid-cols-5 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-20 h-20 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-6 relative">
+                        <span class="text-4xl">📧</span>
+                        <span class="absolute -top-2 -right-2 w-8 h-8 bg-blue-600 rounded-full text-white flex items-center justify-center font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Conecta tu email</h3>
+                    <p class="text-gray-600">Configura tu correo electrónico en la plataforma con unos simples clics</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-20 h-20 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-6 relative">
+                        <span class="text-4xl">📅</span>
+                        <span class="absolute -top-2 -right-2 w-8 h-8 bg-blue-600 rounded-full text-white flex items-center justify-center font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Selecciona el periodo</h3>
+                    <p class="text-gray-600">Indica la fecha de inicio y fin que deseas analizar para el procesamiento automático</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-20 h-20 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-6 relative">
+                        <span class="text-4xl">📎</span>
+                        <span class="absolute -top-2 -right-2 w-8 h-8 bg-blue-600 rounded-full text-white flex items-center justify-center font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Procesa documentos</h3>
+                    <p class="text-gray-600">Procesa tus documentos adjuntos automáticamente</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-20 h-20 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-6 relative">
+                        <span class="text-4xl">📁</span>
+                        <span class="absolute -top-2 -right-2 w-8 h-8 bg-blue-600 rounded-full text-white flex items-center justify-center font-bold">4</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Organiza</h3>
+                    <p class="text-gray-600">Clasifica y almacena ordenadamente tus facturas</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-20 h-20 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-6 relative">
+                        <span class="text-4xl">📈</span>
+                        <span class="absolute -top-2 -right-2 w-8 h-8 bg-blue-600 rounded-full text-white flex items-center justify-center font-bold">5</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Reportes</h3>
+                    <p class="text-gray-600">Visualiza análisis detallados y gráficos para la toma de decisiones</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planes -->
+    <section id="planes" class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Planes flexibles para cada necesidad</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Plan Gratuito -->
+                <div class="border rounded-xl p-8 hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-4">Plan Gratuito</h3>
+                    <p class="text-3xl font-bold mb-6">$0<span class="text-lg font-normal text-gray-600">/mes</span></p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            20 documentos
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Sin límite de tiempo
+                        </li>
+                    </ul>
+                    <a href="#" class="block text-center bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Comenzar</a>
+                </div>
+
+                <!-- Plan Básico -->
+                <div class="border rounded-xl p-8 hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-4">Plan Básico</h3>
+                    <p class="text-3xl font-bold mb-6">$35<span class="text-lg font-normal text-gray-600">/año</span></p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            700 documentos
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Reportes básicos
+                        </li>
+                    </ul>
+                    <a href="#" class="block text-center bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Elegir Plan</a>
+                </div>
+
+                <!-- Plan Premium -->
+                <div class="border rounded-xl p-8 hover:shadow-lg transition-shadow bg-blue-50">
+                    <div class="bg-blue-600 text-white px-4 py-1 rounded-full text-sm inline-block mb-4">Más Popular</div>
+                    <h3 class="text-xl font-semibold mb-4">Plan Premium</h3>
+                    <p class="text-3xl font-bold mb-6">$150<span class="text-lg font-normal text-gray-600">/año</span></p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            2,000 documentos
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Reportes avanzados
+                        </li>
+                    </ul>
+                    <a href="#" class="block text-center bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Elegir Plan</a>
+                </div>
+
+                <!-- Plan Empresarial -->
+                <div class="border rounded-xl p-8 hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-4">Plan Empresarial</h3>
+                    <p class="text-3xl font-bold mb-6">Contactar<span class="text-lg font-normal text-gray-600"></span></p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Documentos ilimitados
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Soporte dedicado
+                        </li>
+                    </ul>
+                    <a href="#" class="block text-center bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Contactar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">EasyFacturas</h4>
+                    <p class="text-gray-400">Automatiza la gestión de tus facturas directamente desde tu correo.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#como-funciona" class="text-gray-400 hover:text-white">Cómo Funciona</a></li>
+                        <li><a href="#planes" class="text-gray-400 hover:text-white">Planes</a></li>
+                        <li><a href="#beneficios" class="text-gray-400 hover:text-white">Beneficios</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="terms.html" class="text-gray-400 hover:text-white">Términos y Condiciones</a></li>
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-white">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+                    <p class="text-gray-400">info@organizatusfacturas.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 EasyFacturas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
