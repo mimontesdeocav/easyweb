@@ -1,4 +1,37 @@
-// Smooth scroll para los enlaces de navegación
+// Función para manejar las animaciones de scroll
+function handleScrollAnimations() {
+    const elements = document.querySelectorAll('.scroll-reveal');
+    
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        
+        if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
+            element.classList.add('active');
+        }
+    });
+}
+
+// Inicializar las animaciones de scroll
+document.addEventListener('DOMContentLoaded', () => {
+    handleScrollAnimations();
+    window.addEventListener('scroll', handleScrollAnimations);
+});
+
+// Navbar transparente con scroll
+function handleNavbarTransparency() {
+    const navbar = document.querySelector('.navbar-glass');
+    if (window.scrollY > 50) {
+        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+    } else {
+        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+    }
+}
+
+// Inicializar la transparencia del navbar
+window.addEventListener('scroll', handleNavbarTransparency);
+
+// Smooth scroll para los enlaces del navbar
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -10,14 +43,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
-});
-
-// Animación del navbar al hacer scroll
-window.addEventListener('scroll', function() {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 50) {
-        nav.classList.add('shadow-lg');
-    } else {
-        nav.classList.remove('shadow-lg');
-    }
 });
