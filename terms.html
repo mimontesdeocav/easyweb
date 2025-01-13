@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Términos y Condiciones - EasyFacturas</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
     <script>
         tailwind.config = {
             theme: {
@@ -29,6 +30,9 @@
         }
     </script>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navbar -->
@@ -40,11 +44,38 @@
                         <img src="assets/images/Logo.png" alt="EasyFacturas Logo" class="h-16 w-auto" style="min-width: 200px;">
                     </a>
                 </div>
+                <!-- Menú móvil -->
+                <div class="md:hidden" x-data="{ open: false }">
+                    <button @click="open = !open" class="text-gray-700 hover:text-gray-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                    <!-- Menú móvil desplegable -->
+                    <div x-show="open" 
+                         x-cloak
+                         x-transition:enter="transition ease-out duration-200"
+                         x-transition:enter-start="opacity-0 transform scale-90"
+                         x-transition:enter-end="opacity-100 transform scale-100"
+                         x-transition:leave="transition ease-in duration-100"
+                         x-transition:leave-start="opacity-100 transform scale-100"
+                         x-transition:leave-end="opacity-0 transform scale-90"
+                         @click.away="open = false"
+                         style="display: none;"
+                         class="absolute top-full left-0 right-0 bg-white shadow-lg py-2 px-4 z-50">
+                        <a href="/" @click="open = false" class="block py-2 text-gray-700 hover:text-gray-900">Inicio</a>
+                        <a href="/#como-funciona" @click="open = false" class="block py-2 text-gray-700 hover:text-gray-900">¿Cómo Funciona?</a>
+                        <a href="/#beneficios" @click="open = false" class="block py-2 text-gray-700 hover:text-gray-900">Beneficios</a>
+                        <a href="/#planes" @click="open = false" class="block py-2 text-gray-700 hover:text-gray-900">Planes</a>
+                    </div>
+                </div>
+                <!-- Menú desktop -->
                 <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="nav-link text-gray-700">Inicio</a>
                     <a href="/#como-funciona" class="nav-link text-gray-700">¿Cómo Funciona?</a>
                     <a href="/#beneficios" class="nav-link text-gray-700">Beneficios</a>
                     <a href="/#planes" class="nav-link text-gray-700">Planes</a>
-                    <a href="#" class="btn-primary text-white px-6 py-2 rounded-lg">Empezar Gratis</a>
                 </div>
             </div>
         </div>
@@ -148,7 +179,8 @@
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Enlaces Rápidos</h3>
                     <ul class="space-y-2">
-                        <li><a href="/#como-funciona" class="text-gray-400 hover:text-white">Cómo Funciona</a></li>
+                        <li><a href="/" class="text-gray-400 hover:text-white">Inicio</a></li>
+                        <li><a href="/#como-funciona" class="text-gray-400 hover:text-white">¿Cómo Funciona?</a></li>
                         <li><a href="/#beneficios" class="text-gray-400 hover:text-white">Beneficios</a></li>
                         <li><a href="/#planes" class="text-gray-400 hover:text-white">Planes</a></li>
                     </ul>
