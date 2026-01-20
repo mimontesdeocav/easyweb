@@ -6,6 +6,29 @@
     <title>Política de Privacidad - EasyFacturas</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blue: {
+                            '50': '#f0f9ff',
+                            '100': '#e0f2fe',
+                            '200': '#bae6fd',
+                            '300': '#7dd3fc',
+                            '400': '#38bdf8',
+                            '500': '#0ea5e9',
+                            '600': '#0284c7',
+                            '700': '#0369a1',
+                            '800': '#075985',
+                            '900': '#0c4a6e',
+                            '950': '#082f49',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
         [x-cloak] { display: none !important; }
@@ -62,80 +85,279 @@
     <div class="pt-32">
         <!-- Contenido -->
         <div class="max-w-4xl mx-auto px-4 py-12">
-            <h1 class="text-3xl font-bold mb-8">Política de Privacidad</h1>
+            <h1 class="text-4xl font-bold mb-4">Política de Privacidad</h1>
+            <p class="text-gray-600 mb-8">
+                Fecha de última actualización: 20 de enero de 2026<br>
+                Fecha de entrada en vigor: 20 de enero de 2026
+            </p>
             
             <div class="prose prose-blue max-w-none space-y-8">
                 <section>
                     <h2 class="text-2xl font-semibold mb-4">1. Información que Recopilamos</h2>
                     <p class="mb-4">
-                        EasyFacturas solo almacena el registro y los permisos que el usuario brinda a través de Microsoft, Google o Apple.
+                        EasyFacturas accede a los siguientes datos de su cuenta de Google para proporcionar nuestro servicio de organización automática de facturas:
                     </p>
+                    
+                    <h3 class="text-xl font-semibold mb-3 mt-6">Datos de Google a los que accedemos:</h3>
+                    
+                    <h4 class="text-lg font-semibold mb-2 mt-4">Información básica del perfil:</h4>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li>Nombre completo</li>
+                        <li>Dirección de correo electrónico</li>
+                        <li>Foto de perfil (si está disponible)</li>
+                        <li>ID único de usuario proporcionado por Google</li>
+                    </ul>
+
+                    <h4 class="text-lg font-semibold mb-2 mt-4">Acceso a Gmail:</h4>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li><strong>Metadatos de correos:</strong> Accedemos a información básica como remitente, asunto, fecha y etiquetas para identificar eficientemente correos que puedan contener facturas</li>
+                        <li><strong>Contenido de correos:</strong> Leemos el contenido completo de correos identificados como potenciales facturas para extraer la información necesaria</li>
+                        <li>Accedemos a los archivos adjuntos (PDFs, imágenes, XML) que contengan facturas o comprobantes</li>
+                        <li>No leemos, almacenamos ni procesamos correos personales que no contengan facturas</li>
+                        <li>No modificamos, eliminamos ni enviamos correos desde su cuenta</li>
+                        <li>No compartimos el contenido de sus correos con terceros</li>
+                    </ul>
+
+                    <h4 class="text-lg font-semibold mb-2 mt-4">Acceso a Google Drive:</h4>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Creamos una carpeta específica en su Google Drive para almacenar las facturas organizadas</li>
+                        <li>Subimos los archivos PDF de las facturas encontradas a esta carpeta</li>
+                        <li>Creamos y actualizamos archivos de Excel/Google Sheets con los datos extraídos de las facturas</li>
+                        <li>Solo accedemos a los archivos que nuestra aplicación crea, no a sus archivos personales existentes</li>
+                    </ul>
+
+                    <h4 class="text-lg font-semibold mb-2 mt-4">Datos que procesamos y almacenamos:</h4>
+                    <p class="mb-2">De las facturas que encontramos, extraemos y almacenamos:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li>Información del emisor (nombre del negocio, RUC/NIT, dirección)</li>
+                        <li>Fecha de emisión</li>
+                        <li>Monto total y detalles de la transacción</li>
+                        <li>Número de factura o comprobante</li>
+                        <li>Descripción de productos o servicios</li>
+                    </ul>
+
+                    <p class="mb-2">Además almacenamos:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li>Tokens de autenticación OAuth 2.0 de Google (cifrados)</li>
+                        <li>Preferencias de usuario y configuración de la aplicación</li>
+                        <li>Archivos PDF de las facturas en su Google Drive</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold mb-3 mt-6">1.1 ¿Cómo Funciona EasyFacturas?</h3>
+                    <p class="mb-4">Nuestro servicio automatiza la organización de sus facturas siguiendo estos pasos:</p>
+                    <ol class="list-decimal pl-6 mb-4 space-y-2">
+                        <li><strong>Exploración inicial:</strong> Escaneamos los metadatos de sus correos (asunto, remitente) buscando palabras clave relacionadas con facturas</li>
+                        <li><strong>Identificación:</strong> Cuando detectamos un correo potencial, leemos su contenido completo para confirmar que contiene una factura</li>
+                        <li><strong>Extracción:</strong> Descargamos los archivos PDF adjuntos y extraemos información relevante (fecha, monto, emisor, etc.)</li>
+                        <li><strong>Almacenamiento:</strong> Guardamos los PDFs en una carpeta organizada en su Google Drive</li>
+                        <li><strong>Procesamiento:</strong> Generamos un archivo Excel/Sheets con todos los datos estructurados para su análisis</li>
+                        <li><strong>Visualización:</strong> Presentamos la información en un dashboard interactivo donde puede revisar, buscar y analizar sus facturas</li>
+                    </ol>
+                    <p class="mb-4">Todo esto sucede de forma automática y segura, manteniéndose siempre en su control.</p>
                 </section>
 
                 <section>
                     <h2 class="text-2xl font-semibold mb-4">2. Cómo Utilizamos su Información</h2>
-                    <p class="mb-4">Utilizamos la información para:</p>
-                    <ul class="list-disc pl-6 mb-4">
-                        <li>Proporcionar y mantener nuestro servicio</li>
-                        <li>Mejorar y personalizar la experiencia del usuario</li>
-                        <li>Comunicarnos con usted sobre el servicio</li>
+                    <p class="mb-4">Utilizamos la información únicamente para:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Autenticar su identidad mediante Google OAuth 2.0</li>
+                        <li>Escanear sus correos electrónicos en busca de facturas y comprobantes</li>
+                        <li>Extraer información relevante de las facturas encontradas</li>
+                        <li>Organizar y almacenar las facturas en una carpeta dedicada de su Google Drive</li>
+                        <li>Generar reportes y visualizaciones de sus gastos en el dashboard de la aplicación</li>
+                        <li>Mantener y mejorar la funcionalidad del servicio</li>
+                        <li>Comunicarnos con usted sobre el servicio (notificaciones importantes, actualizaciones)</li>
                     </ul>
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 my-4">
+                        <p class="text-sm">
+                            <strong>Importante:</strong> No utilizamos sus datos de Gmail o Drive para ningún otro propósito. No analizamos correos personales, no accedemos a archivos no relacionados con facturas, y no compartimos su información con terceros.
+                        </p>
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-3 mt-6">2.1 Uso de Google OAuth 2.0 y Permisos</h3>
+                    <p class="mb-4">EasyFacturas utiliza los siguientes permisos de Google para proporcionar el servicio:</p>
+                    
+                    <h4 class="text-lg font-semibold mb-2 mt-4">Permisos de Perfil:</h4>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">https://www.googleapis.com/auth/userinfo.profile</code>: Para obtener su nombre, foto de perfil e ID de usuario de Google</li>
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">https://www.googleapis.com/auth/userinfo.email</code>: Para obtener su dirección de correo electrónico y verificar su identidad</li>
+                    </ul>
+
+                    <h4 class="text-lg font-semibold mb-2 mt-4">Permisos de Gmail:</h4>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">https://www.googleapis.com/auth/gmail.readonly</code>: Para leer el contenido completo de sus correos electrónicos, incluyendo el cuerpo del mensaje y archivos adjuntos, con el fin de identificar y extraer facturas</li>
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">https://www.googleapis.com/auth/gmail.metadata</code>: Para acceder a información básica de los correos (remitente, asunto, fecha, etiquetas) sin leer el contenido completo, lo que nos permite realizar búsquedas más eficientes de correos que potencialmente contengan facturas</li>
+                    </ul>
+
+                    <h4 class="text-lg font-semibold mb-2 mt-4">Permisos de Google Drive:</h4>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">https://www.googleapis.com/auth/drive.file</code>: Para crear y gestionar únicamente los archivos y carpetas que EasyFacturas crea en su Drive. Este permiso NO nos permite acceder a archivos que usted creó o que fueron creados por otras aplicaciones</li>
+                    </ul>
+
+                    <h4 class="text-lg font-semibold mb-2 mt-4">¿Por qué necesitamos estos permisos?</h4>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li><strong>gmail.metadata:</strong> Nos permite escanear rápidamente sus correos por asunto y remitente (ej: buscando palabras como "factura", "comprobante", "invoice") antes de leer el contenido completo, optimizando el rendimiento y reduciendo el uso de recursos</li>
+                        <li><strong>gmail.readonly:</strong> Una vez identificados los correos potencialmente relevantes mediante los metadatos, este permiso nos permite leer el contenido completo y descargar los archivos PDF adjuntos que contengan facturas</li>
+                        <li><strong>drive.file:</strong> Nos permite crear una carpeta organizada en su Drive y subir las facturas encontradas, además de generar archivos Excel/Sheets con los datos procesados</li>
+                    </ul>
+
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 my-4">
+                        <p class="text-sm">
+                            <strong>Compromiso de uso limitado:</strong> Estos permisos se utilizan exclusivamente para las funciones descritas en esta política. No leemos correos personales, no accedemos a archivos no relacionados con la aplicación, y cumplimos estrictamente con los Requisitos de Datos de Usuario de Google API Services.
+                        </p>
+                    </div>
                 </section>
 
                 <section>
                     <h2 class="text-2xl font-semibold mb-4">3. Compartir Información</h2>
                     <p class="mb-4">
-                        No compartimos su información personal con terceros de ninguna manera. Nos comprometemos a proteger sus datos cumpliendo con los más altos estándares de calidad y seguridad. Su información se mantiene confidencial y bajo estrictas medidas de protección, garantizando que no será divulgada, transferida o utilizada fuera de los propósitos estrictamente necesarios para el funcionamiento interno de nuestros servicios.
+                        <strong>No compartimos, vendemos ni alquilamos su información personal con terceros bajo ninguna circunstancia.</strong>
+                    </p>
+                    
+                    <p class="mb-4">Nos comprometemos a:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Mantener sus datos confidenciales y seguros</li>
+                        <li>No utilizar sus correos electrónicos o archivos de Drive para publicidad</li>
+                        <li>No compartir sus datos financieros o facturas con empresas externas</li>
+                        <li>Cumplir con los más altos estándares de calidad y seguridad</li>
+                    </ul>
 
-
+                    <p class="mb-4">
+                        <strong>Excepciones:</strong> Solo divulgaríamos información si fuera legalmente requerido por autoridades competentes o para proteger nuestros derechos legales.
                     </p>
                 </section>
 
                 <section>
                     <h2 class="text-2xl font-semibold mb-4">4. Seguridad de los Datos</h2>
-                    <p class="mb-4">
-                        Implementamos diversas medidas de seguridad técnicas, administrativas y físicas para proteger su información personal, entre ellas:
-Cifrado de datos sensibles durante su transmisión mediante protocolos seguros como SSL/TLS.
-Sistemas de control de acceso para garantizar que solo el personal autorizado pueda acceder a su información.
-Monitoreo continuo de nuestros sistemas para identificar y mitigar posibles vulnerabilidades o amenazas.
-Procedimientos regulares de copia de seguridad y recuperación de datos para prevenir pérdidas en caso de incidentes.
-                    </p>
+                    <p class="mb-4">Implementamos múltiples medidas de seguridad para proteger su información:</p>
+                    
+                    <h3 class="text-xl font-semibold mb-3 mt-6">Medidas técnicas:</h3>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Cifrado de datos en tránsito mediante SSL/TLS</li>
+                        <li>Cifrado de datos sensibles en reposo</li>
+                        <li>Tokens OAuth almacenados con cifrado AES-256</li>
+                        <li>Acceso restringido mediante autenticación de dos factores para personal autorizado</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold mb-3 mt-6">Medidas administrativas:</h3>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Control de acceso estricto: solo personal autorizado puede acceder a sistemas con datos de usuarios</li>
+                        <li>Políticas de manejo de datos y capacitación regular del equipo</li>
+                        <li>Auditorías de seguridad periódicas</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold mb-3 mt-6">Medidas de protección:</h3>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Monitoreo continuo de sistemas para detectar vulnerabilidades</li>
+                        <li>Copias de seguridad regulares y cifradas</li>
+                        <li>Planes de respuesta ante incidentes de seguridad</li>
+                        <li>Actualizaciones de seguridad aplicadas regularmente</li>
+                    </ul>
                 </section>
 
                 <section>
-                    <h2 class="text-2xl font-semibold mb-4">5. Sus Derechos</h2>
-                    <p class="mb-4">
-                        Tiene derecho a acceder, corregir o eliminar su información personal.
-                    </p>
+                    <h2 class="text-2xl font-semibold mb-4">5. Retención de Datos</h2>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Los datos de facturas se mantienen mientras su cuenta esté activa</li>
+                        <li>Puede eliminar facturas individuales en cualquier momento desde la aplicación</li>
+                        <li>Al eliminar su cuenta, todos sus datos se borran permanentemente en un plazo de 30 días</li>
+                        <li>Los archivos en Google Drive permanecen bajo su control total en todo momento</li>
+                    </ul>
                 </section>
 
                 <section>
-                    <h2 class="text-2xl font-semibold mb-4">6. Cambios en esta Política</h2>
+                    <h2 class="text-2xl font-semibold mb-4">6. Sus Derechos</h2>
+                    <p class="mb-4">Usted tiene derecho a:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Acceder a toda la información que tenemos sobre usted</li>
+                        <li>Corregir cualquier dato inexacto o incompleto</li>
+                        <li>Eliminar su cuenta y todos sus datos asociados</li>
+                        <li>Revocar permisos de acceso a Gmail y Google Drive en cualquier momento desde su cuenta de Google</li>
+                        <li>Exportar sus datos en formato portable</li>
+                        <li>Oponerse al procesamiento de sus datos (lo cual resultaría en la terminación del servicio)</li>
+                    </ul>
                     <p class="mb-4">
-                        Podemos actualizar esta política. Le notificaremos sobre cambios significativos.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-semibold mb-4">7. Consentimiento</h2>
-                    <p class="mb-4">
-                        Al utilizar EasyFacturas, usted acepta esta Política de Privacidad.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-semibold mb-4">8. Contacto</h2>
-                    <p class="mb-4">
-                        Para preguntas sobre esta política, contacte a 
-                        <a href="mailto:contacto@organizatusfacturas.com" class="text-blue-600 hover:text-blue-800">
+                        Para ejercer cualquiera de estos derechos, contáctenos en 
+                        <a href="mailto:contacto@organizatusfacturas.com" class="text-blue-600 hover:text-blue-800 underline">
                             contacto@organizatusfacturas.com
                         </a>
                     </p>
                 </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold mb-4">7. Revocación de Permisos</h2>
+                    <p class="mb-4">Puede revocar el acceso de EasyFacturas a su cuenta de Google en cualquier momento:</p>
+                    <ol class="list-decimal pl-6 mb-4 space-y-2">
+                        <li>Visite <a href="https://myaccount.google.com/permissions" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener noreferrer">https://myaccount.google.com/permissions</a></li>
+                        <li>Busque "EasyFacturas"</li>
+                        <li>Haga clic en "Eliminar acceso"</li>
+                    </ol>
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 my-4">
+                        <p class="text-sm">
+                            <strong>Nota:</strong> Al revocar el acceso, la aplicación dejará de funcionar, pero sus datos almacenados en nuestros servidores y en su Google Drive permanecerán intactos hasta que decida eliminarlos.
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold mb-4">8. Cumplimiento con Políticas de Google</h2>
+                    <p class="mb-4">EasyFacturas cumple con:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Las Políticas de API de Google</li>
+                        <li>Los Requisitos de Datos de Usuario de los Servicios API de Google</li>
+                        <li>Las mejores prácticas de seguridad y privacidad recomendadas por Google</li>
+                    </ul>
+                    <p class="mb-4">
+                        Utilizamos los datos de Google únicamente para proporcionar y mejorar las funcionalidades visibles para el usuario en nuestra aplicación.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold mb-4">9. Cambios en esta Política</h2>
+                    <p class="mb-4">
+                        Podemos actualizar esta política de privacidad periódicamente. Le notificaremos sobre cambios significativos mediante:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Un correo electrónico a su dirección registrada</li>
+                        <li>Un aviso destacado en la aplicación</li>
+                        <li>Actualización de la fecha de "última actualización" en este documento</li>
+                    </ul>
+                    <p class="mb-4">
+                        Su uso continuado del servicio después de los cambios constituye su aceptación de la política actualizada.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold mb-4">10. Consentimiento</h2>
+                    <p class="mb-4">Al utilizar EasyFacturas y otorgar los permisos de acceso a su cuenta de Google, usted:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Acepta esta Política de Privacidad</li>
+                        <li>Autoriza el acceso a su Gmail y Google Drive según lo descrito</li>
+                        <li>Comprende cómo se utilizarán sus datos</li>
+                        <li>Puede revocar este consentimiento en cualquier momento</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold mb-4">11. Contacto y Preguntas</h2>
+                    <p class="mb-4">
+                        Para preguntas sobre esta política, ejercer sus derechos de privacidad, o reportar problemas de seguridad:
+                    </p>
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+                        <p class="mb-2">
+                            <strong>Email:</strong> 
+                            <a href="mailto:contacto@organizatusfacturas.com" class="text-blue-600 hover:text-blue-800 underline">
+                                contacto@organizatusfacturas.com
+                            </a>
+                        </p>
+                        <p class="mb-2"><strong>Asunto sugerido:</strong> "Privacidad - [Su consulta]"</p>
+                        <p class="mb-2"><strong>Tiempo de respuesta:</strong> Nos comprometemos a responder dentro de 48 horas hábiles</p>
+                    </div>
+                </section>
             </div>
 
-            <div class="mt-12 text-center">
-                <p class="text-gray-600">Última actualización: 6 de enero de 2025</p>
+            <div class="mt-12 text-center border-t pt-8">
+                <p class="text-gray-600 font-semibold">Última actualización: 20 de enero de 2026</p>
             </div>
         </div>
     </div>
@@ -182,7 +404,7 @@ Procedimientos regulares de copia de seguridad y recuperación de datos para pre
                         <!-- YouTube -->
                         <a href="https://www.youtube.com/@organizatusfacturas" class="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814A9.935 9.935 0 0024 4.59z"/>
                             </svg>
                         </a>
                         <!-- Twitter -->
